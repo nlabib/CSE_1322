@@ -28,8 +28,22 @@ public void increaseQuantity(int i){
 } 
 
 public void decreaseQuantity(int i){
+	if(quantityOnHand <= 0){
+		quantityOnHand = 0;
+	}else{
 	 quantityOnHand -= i; 
+	}
 }
+
+public int getQuantityOnHand(){
+	return quantityOnHand;
+}
+
+public string printPretty(float amount){
+	return("$" + String.format("%4.2f", amount));
+}
+
+@Override
 
 
 
