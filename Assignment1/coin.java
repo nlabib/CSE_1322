@@ -1,4 +1,4 @@
-public class coin(){
+public class coin{
 
 private int quantityOnHand;
 private float denomination;
@@ -24,7 +24,7 @@ public void increaseQuantity(int i){
 	 }
 	 else{
 	 	quantityOnHand += i; 
-	 }
+	}
 } 
 
 public void decreaseQuantity(int i){
@@ -39,11 +39,15 @@ public int getQuantityOnHand(){
 	return quantityOnHand;
 }
 
-public string printPretty(float amount){
+public String printPretty(float amount){
 	return("$" + String.format("%4.2f", amount));
 }
 
 @Override
+public String toString(){
+	String print = "$" + getTotalValue + " in " + printPretty;
+	return print;
+}
 
 
 
