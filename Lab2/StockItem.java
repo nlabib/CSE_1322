@@ -11,6 +11,8 @@ public class StockItem{
     private int id;
     private float price;
     private int quantity;
+    static int counter = 0;
+    
     public StockItem(){
         productDescription = " ";
         id = 0;
@@ -23,6 +25,7 @@ public class StockItem{
         this.productDescription = pd;
         this.price = p;
         this.quantity = q;
+        this.id = counter++;
     }
     //Getter
     public String getProductDescription(){

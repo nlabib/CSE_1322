@@ -72,7 +72,6 @@ class main{
                 pixel2[i][ncolum] = a;
             }
         }
-
         // what to change
         for(int i=0; i<4; i++){
             for(int j =0; j<13; j++){
@@ -84,7 +83,6 @@ class main{
         }
         return pixel2;
     }
-
     public static void main(String[] args) {
         char[][] drawing = new char[4][13];
         drawing = make_forward();
@@ -96,8 +94,6 @@ class main{
             }
             System.out.println("");
         }
-
-
         // Print backward
         char[][] backward = new char[4][13];
         backward = make_mirror(drawing);
@@ -107,12 +103,10 @@ class main{
             }
             System.out.println(" ");
         }
-
         char[][] mirror = new char[4][13];
         mirror = make_mirror(drawing); // calling make_mirror()
-
         // Mirror
-        for(int i = 0; i<4; i++){
+        for(int i = 0; i<mirror.length; i++){
             for(int j = 0; j < 26; j++){
                 if(j < 13){
                     System.out.print(drawing[i][j]);
@@ -127,6 +121,3 @@ class main{
 
     }
 }
-
-
-
