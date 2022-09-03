@@ -14,7 +14,7 @@ public class wordgame{
 
 
 
-	public wordgame(int input){
+	 public wordgame(int input){
 		if(input%2==0){
 			this.userInputCell = input;
 			revealShow= new boolean[userInputCell][userInputCell];
@@ -25,12 +25,12 @@ public class wordgame{
 			System.out.println("Dimensions must be even");
 			return;
 		}
-
-
+		
+		
 	}
+	 
 
-
-
+	
 	//using random generator to generate the board
 
 	public  void fillBoard(){
@@ -48,7 +48,7 @@ public class wordgame{
 				}
 			}
 		}while(whenToChange<gameboard.length*gameboard.length);
-
+		
 	}
 
 	public void printBoard(){
@@ -59,7 +59,7 @@ public class wordgame{
 				if(revealShow[i][j] == true){
 					System.out.print(gameboard[i][j]);
 				}
-
+				
 			}
 			System.out.print(" | ");
 			System.out.println();
@@ -81,11 +81,11 @@ public class wordgame{
 				if(revealShow[i][j] == false){
 					return false;
 				}
-
+				
 			}
 		}
 		return true;
-
+	
 
 	}
 
