@@ -1,14 +1,12 @@
 import java.util.Scanner;
 
-public class main{
+public class driver{
     public static void main(String[] args){
         wordgame game1 = new wordgame();
 
-        Scanner userin = new Scanner(System.in);
-        System.out.println("How big of a board (Enter an even number)?");
-        int input = userin.nextInt();
 
-        game1.setUserInputCell(input);
+
+        //game1.setUserInputCell();
 
         game1.fillBoard();
         game1.printBoard();

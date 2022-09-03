@@ -1,48 +1,55 @@
-import jdk.swing.interop.SwingInterOpUtils;
-
 import java.util.Random;
-
+import java.util.ArrayList;
+import java.util.Scanner;
 public class wordgame{
-	//private char[][] gameboard;
-
+	private  int userInputCell = 4;
+	private char[][] gameboard = new char[userInputCell][userInputCell];
 	private boolean[][] revealShow;
-	private  int userInputCell = 10;
+	private int index;
 
-	private static int index;
-
-//fix so it takes in input correcly
-	public void setUserInputCell(int userInputCell){
-		if(userInputCell % 2 == 0){
-			this.userInputCell = userInputCell;
-		} else{
-			System.out.println("Input a even number: ");
-		}
+//Constructor isn't working
+	//Get the input for the user and check if the number is even.
+/*
+	public void setUserInputCell(){
+		do{
+			System.out.println("How big of a board (Enter an even number)?");
+			Scanner userIn = new Scanner(System.in);
+			this.userInputCell = userIn.nextInt();
+		}while(userInputCell % 2 != 0);
 	}
-
-
-
-	char[][] gameboard = new char[userInputCell][userInputCell];
-
+	public wordgame(){
+		this.userInputCell = userinput;
+	}
+*/
 	//using random generator to generate the board
 	public  void fillBoard(){
-		char[] charbank = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+
+		ArrayList<Character> wordbank = new ArrayList<>();
+		//Generates A to Z in the wordbank arraylist
+		for(char a = 'A'; a <= 'Z'; a++){
+			wordbank.add(a);
+		}
 		Random random_number = new Random();
 		for(int i = 0; i < gameboard.length; i++){
 			for(int j = 0; j < gameboard.length; j++){
 				// Filling the board
-				index = random_number.nextInt(charbank.length);
-				gameboard[i][j] = charbank[index];
+				index = random_number.nextInt(userInputCell/2);
+				//Check if the location of the array is an open positon
+				if(gameboard[i][j] == '\u0000'){
+					gameboard[i][j] = wordbank.get(index);
+					wordbank.remove(i);
+				}
 			}
 		}
-
 	}
 
 	public void printBoard(){
 		for(int i = 0; i < gameboard.length; i++){
 			for(int j = 0; j < gameboard.length; j++){
-				System.out.print(gameboard[i][j]);
 				System.out.print(" | ");
+				System.out.print(gameboard[i][j]);
 			}
+			System.out.print(" | ");
 			System.out.println();
 		}
 	}
