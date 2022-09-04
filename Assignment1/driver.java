@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class driver{
+public class main{
 
 
     public static void main(String[] args){
@@ -63,7 +63,7 @@ public class driver{
 
 
         }while(! game1.allRevealed());
-
+        System.out.println("You Own!");
 
         // set userinput cell
         // match if their is two words
