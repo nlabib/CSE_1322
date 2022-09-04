@@ -2,15 +2,20 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Quiz{
-	static ArrayList<Question> q1 = new ArrayList<Question>();
+	static ArrayList<Question> questionSets = new ArrayList<Question>();
 	Scanner uin = new Scanner(System.in);
-	public void add_question(){
+	public void addQuestion(){
 		System.out.print("What is the question Text?\n");
-		String question = uin.nextLine();
+		String q = uin.nextLine();
 		System.out.println("What is the answer?\n");
 		String qans = uin.nextLine();
-		System.out.println("How Difficult(1-3)");
+		System.out.println("How Difficult(1-3)\n");
+		int dif = uin.nextInt();
+		Question question = new Question(q, qans, dif);
+		questionSets.add(question);
+	}
 
-
+	public void removeQuestions(){
+		for()
 	}
 }
