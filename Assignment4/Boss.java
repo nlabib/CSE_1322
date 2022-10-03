@@ -7,9 +7,7 @@ public class Boss extends Character{
 		setName("Boss");
 		setHitPoint(200);
 	}
-
 	Random ranNumber = new Random();
-
 
 	@Override
 	public int attack(){

@@ -3,9 +3,11 @@ import java.util.Random;
 public class Grunt extends Character{
 	static int gruntID;
 	private int maxAttack = 5;
+	private int gnum = 0;
 
 	public Grunt(){
-		String gruntName = "Grunt" + gruntID;
+		gnum = ++gruntID;
+		String gruntName = "Grunt" + gnum;
 		setName(gruntName);
 		setHitPoint(100);
 	}

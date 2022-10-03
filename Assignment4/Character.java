@@ -1,11 +1,11 @@
-public abstract class Character{
-protected int startingHitPoint = 0;
-protected int currenthPoint = 0;
-protected boolean alive;
-protected  String name;
-public Character(){
-	alive = true;
-}
+	public abstract class Character{
+	protected int startingHitPoint = 0;
+	protected int currenthPoint = 0;
+	protected boolean alive;
+	protected  String name;
+	public Character(){
+		alive = true;
+	}
 
 	public String getName(){
 		return name;
@@ -23,12 +23,12 @@ public Character(){
 
 
 	public int health(){
-		float heath = (currenthPoint / startingHitPoint) * 100;
-		int current_healthP = (int) (100 - heath);
-		return current_healthP;
+		int heath = (currenthPoint / startingHitPoint) * 100;
+
+		return heath;
 	}
 	public void takeHit(int damage){
-		System.out.println((name + " has been hit with " + damage + " damage"));
+		System.out.println(("\n" +name + " has been hit with " + damage + " damage"));
 		if(currenthPoint < 0 || startingHitPoint < 0){
 			setHitPoint(0);
 			if(currenthPoint < 0){
@@ -39,7 +39,7 @@ public Character(){
 		else {
 			currenthPoint -= damage;
 			startingHitPoint -= damage;
-			System.out.println(name + " now has health of" + currenthPoint);
+			System.out.println("\n" +name + " now has health of " + currenthPoint);
 		}
 	}
 	public boolean isAlive(){
@@ -51,18 +51,19 @@ public Character(){
 		}
 	}
 	public void displayYourself(){
-		System.out.println(name + " Health: " + health() + " %");
-		int displaybar = 100 / health();
+		System.out.println("\n" +name + " Health: " + health() + " %");
+		int displaybar = health();
 		for(int i  = 0; i < 10; i++){
-			if(i < displaybar){
+			if(i < displaybar / 10){
 				System.out.print("=");
 			}
 			else{
 				System.out.print("_");
 			}
+
 		}
 
 	}
-public abstract int attack();
+	public abstract int attack();
 
 }

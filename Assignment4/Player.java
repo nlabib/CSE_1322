@@ -15,10 +15,10 @@ public class Player extends Character{
 
 	@Override
 	public void displayYourself(){
-		System.out.println(name + " Health: " + health() + " %");
-		int displaybar = 100 / health();
+		System.out.println("\n" +name + " Health: " + health() + " %");
+		int displaybar = health();
 		for(int i  = 0; i < 10; i++){
-			if(i < displaybar){
+			if(i < displaybar /10){
 				System.out.print("=");
 			}
 			else{
