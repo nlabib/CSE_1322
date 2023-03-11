@@ -18,6 +18,7 @@ public class StockItem{
         id = 0;
         price = 0.0f;
         quantity = 0;
+	//this is a test
     }
 
 
